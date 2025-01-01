@@ -9,19 +9,10 @@
   },
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
-    "all": "pnpm i",
-    "format": "biome format . --write",
-		"format:check": "biome format .",
-		"lint": "biome check . --write --unsafe",
-		"lint:check": "biome check . --verbose",
-    "build": "tsc && cp src/manifest.json src/popup.html src/icon48.png src/icon128.png dist/",
-=======
     "all": "pnpm i && bun run build",
     "build": "tsc && vite build",
     "dev": "cross-env NODE_ENV=development bun run build",
     "build:types": "tsup --dts-only",
->>>>>>> 0e1bdfb (feat: implemented EIP-6963 and ensure compliance with EIP-1193)
     "watch": "tsc --watch"
   },
   "keywords": [],
