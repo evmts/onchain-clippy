@@ -12,6 +12,9 @@ export const getManifest = ({ dev }: { dev?: boolean }) => ({
             '128': `icons/icon128.png`,
         },
     },
+    background: {
+      service_worker: 'src/entries/background/interceptRequests.ts'
+    },
     content_scripts: [
       {
         id: "inpage",
@@ -19,6 +22,12 @@ export const getManifest = ({ dev }: { dev?: boolean }) => ({
         js: ['src/entries/content/index.ts'],
         run_at: 'document_start',
         world: 'MAIN',
+      },
+      {
+        id: "inpage2",
+        matches: ['*://*/*'],
+        js: ['src/entries/content/listen.ts'],
+        run_at: 'document_start'
       }
     ],
     icons: {
