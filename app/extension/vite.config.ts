@@ -7,24 +7,6 @@ const dev = process.env.NODE_ENV === 'development';
 
 export const outDir = dev ? 'dist/dev' : 'dist/build';
 
-// export default defineConfig({
-//     build: {
-//         emptyOutDir: false,
-//         outDir,
-//         target: 'esnext', // Target modern browsers for ES Module output
-//         rollupOptions: {
-//             output: {
-//                 format: 'esm', // Explicitly set ES Module format
-//             },
-//         },
-//     },
-//     plugins: [
-//         tsconfigPaths(),
-//         webExtension({
-//             manifest: getManifest({ dev }),
-//         }),
-//     ],
-// });
 export default defineConfig({
   build: {
       emptyOutDir: false,
