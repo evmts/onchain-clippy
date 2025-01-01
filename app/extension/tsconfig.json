@@ -1,10 +1,10 @@
 {
-	"extends": "@tevm/tsconfig/base.json",
-	"compilerOptions": {
-		"rootDir": "src",
-		"outDir": "dist",
-		"skipLibCheck": true,
-		"lib": ["DOM", "DOM.Iterable", "ESNext"]
-	},
-	"include": ["src"]
+  "extends": "@tevm/tsconfig/base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"]
+  },
+  "include": ["src", "src/global.d.ts"]
 }
