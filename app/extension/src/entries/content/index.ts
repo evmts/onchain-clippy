@@ -1,5 +1,3 @@
-import { injectProvider } from "./provider.js";
-import { startMessageListener } from "./event.js";
+import { injectProvider } from "./injectProvider.js";
 
 injectProvider()
-startMessageListener()

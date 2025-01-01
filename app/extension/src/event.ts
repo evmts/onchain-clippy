@@ -1,27 +1,39 @@
+import {type EIP1193Provider } from 'viem'
+
 const events = ['accountsChanged', 'message', 'connect', 'disconnect', 'chainChanged'] as const;
 
 type EventType = typeof events[number];
+
 type Callback = (data: any) => void;
 
 const eventListeners: Map<EventType, Set<Callback>> = new Map(
     events.map(event => [event, new Set<Callback>()])
 );
 
-function isValidMessageEvent(event: unknown): event is { data: any } {
+// would probably need to handle by sending this to the background worker
+function getCallback(event: EventType, _data: any) {
+    switch (event) {
+        case 'accountsChanged':
+            break
+        case 'connect':
+            break
+        case 'disconnect':
+            break
+        case 'chainChanged':
+            break
+        default:
+            console.warn(`Unhandled event: ${event}`);
+    }
+}
+
+export function isValidMessageEvent(event: unknown): event is { data: any } {
     return (
         typeof event === 'object' &&
         event !== null &&
         'data' in event &&
         typeof event.data === 'object' &&
-        event.data !== null &&
-        'interceptorApproved' in event.data
+        event.data !== null
     );
-}
-
-function handleUndefinedInterceptor() {
-    events.filter(event => event !== 'message').forEach(event => {
-        window.ethereum?.on(event, () => {});
-    });
 }
 
 export const callbackRegister = <T extends EventType>(event: T, callback: (data: any) => void) => {
@@ -40,17 +52,9 @@ export const callbackUnregister = <T extends EventType>(event: T, callback: (dat
     }
 };
 
-// re-inject the provider
-export function startMessageListener() {
-    const eventCallBack = async (event: unknown) => {
-        if (!window.ethereum?.isInterceptor
-            || window.ethereum?.isInterceptor === undefined) {
-                handleUndefinedInterceptor()
-        }
-        // console.log(event);
-        // console.log(12);
-        console.log("my own interceptor: ", window.ethereum?.isInterceptor)
-        console.log("isValidMessageEvent", isValidMessageEvent(event))
-    }
-    window.addEventListener('message', eventCallBack);
+export function subscribeProviderEvents(provider: EIP1193Provider): EIP1193Provider {
+    events.filter(event => event !== 'message').forEach(event => {
+        provider.on(event, (data: any) => getCallback(event, data));
+    });
+    return provider
 }

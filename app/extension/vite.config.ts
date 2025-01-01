@@ -31,7 +31,7 @@ export default defineConfig({
       modulePreload: false,
       rollupOptions: {
           input: {
-              inpage: 'src/entries/background/inject.ts',
+              inpage: 'src/entries/background/interceptRequests.ts',
               popup: 'src/popup.ts', // Add popup.html as an entry
           },
           output: {

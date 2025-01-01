@@ -1,6 +1,6 @@
 interface Window {
 	// dispatchEvent: (event: Event) => boolean
-	ethereum?: WindowEthereum // see how to change to eip1193
+	ethereum: WindowEthereum // see how to change to eip1193
 	// web3?: {
 	// 	currentProvider: WindowEthereum
 	// 	accounts: readonly string[]
@@ -13,6 +13,6 @@ type WindowEthereum = InjectedState & {
 	request: ({ method, params }: { method: string; params: unknown[] | any }) => Promise<any>;
 }
 
-type InjectedState = {
-	isInterceptor: boolean;
-}
+// type InjectedState = {
+// 	isInterceptor: boolean;
+// }
