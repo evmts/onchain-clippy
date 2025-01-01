@@ -81,7 +81,6 @@ importers:
 
 packages:
 
-<<<<<<< HEAD
   '@biomejs/biome@1.9.4':
     resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
     engines: {node: '>=14.21.3'}
@@ -134,7 +133,7 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
-=======
+
   '@adraffy/ens-normalize@1.11.0':
     resolution: {integrity: sha512-/3DDPKHqqIqxUULp8yP4zODUY1i+2xvVWsv8A79xGWdCAG+8sb0hRh0Rk2QyOJUnnbyPUAZYcpBuRe3nS2OIUg==}
 
@@ -142,7 +141,6 @@ packages:
     resolution: {integrity: sha512-koTi0M1MYUjEDawLmksXBROROLx0BEG2ErwVGLVawmwuBwVbw1MTEd0QlG2+jds5avYXCJp67rHS7cuIxmnBwg==}
     peerDependencies:
       effect: ^3.8.4
->>>>>>> 0e1bdfb (feat: implemented EIP-6963 and ensure compliance with EIP-1193)
 
   '@emnapi/core@1.3.1':
     resolution: {integrity: sha512-pVGjBIt1Y6gg3EJN8jTcfpP/+uuRksIo055oE/OBkDNcjZqVbfkWCksG1Jp4yZnj3iKWyWX8fdG/j6UDYPbFog==}
@@ -2009,6 +2007,7 @@ packages:
 snapshots:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@biomejs/biome@1.9.4':
     optionalDependencies:
       '@biomejs/cli-darwin-arm64': 1.9.4
@@ -2043,14 +2042,13 @@ snapshots:
 
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
-=======
+
   '@adraffy/ens-normalize@1.11.0': {}
 
   '@effect/schema@0.74.1(effect@3.8.4)':
     dependencies:
       effect: 3.8.4
       fast-check: 3.23.2
->>>>>>> 0e1bdfb (feat: implemented EIP-6963 and ensure compliance with EIP-1193)
 
   '@emnapi/core@1.3.1':
     dependencies:
