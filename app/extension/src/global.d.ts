@@ -1,10 +1,9 @@
-interface Window {
-	ethereum: WindowEthereum 
+import type { EIP1193Provider } from "viem";
+
+declare global {
+  interface Window {
+    ethereum: EIP1193Provider;
+  }
 }
 
-type WindowEthereum = InjectedState & {
-	on: <T extends EventType>(event: T, callback: (data: any) => void) => void;
-	removeListener: <T extends EventType>(event: T, callback: (data: any) => void) => void;
-	request: ({ method, params }: { method: string; params: unknown[] | any }) => Promise<any>;
-}
-
+export {};

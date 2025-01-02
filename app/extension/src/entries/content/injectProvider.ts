@@ -18,7 +18,7 @@ export function injectProvider() {
         },
         provider: provider as EIP1193Provider
     })
-
+      
     // re-injects the provider on demand. Pattern from https://github.com/DarkFlorist/TheInterceptor/blob/24efc60711c9e9f90b71915461961153535c7474/app/inpage/ts/inpage.ts#L761
     const interceptorCapturedDispatcher = window.dispatchEvent
     window.dispatchEvent = (event: Event) => {
