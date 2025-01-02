@@ -10,7 +10,8 @@
   "type": "module",
   "scripts": {
     "all": "pnpm i && bun run build",
-    "build": "tsc && vite build",
+    "build": "nx run-many --targets=build:dist,build:types",
+    "build:dist": "tsup",
     "dev": "cross-env NODE_ENV=development bun run build",
     "build:types": "tsup --dts-only",
     "watch": "tsc --watch"
@@ -24,11 +25,8 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@samrum/vite-plugin-web-extension": "^5.1.1",
     "@types/chrome": "^0.0.260",
     "cross-env": "^7.0.3",
-    "typescript": "^5.3.3",
-    "vite": "^4.5.5",
-    "vite-tsconfig-paths": "^5.1.4"
+    "typescript": "^5.3.3"
   }
 }
