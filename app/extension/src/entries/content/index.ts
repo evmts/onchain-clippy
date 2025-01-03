@@ -1,3 +1,3 @@
-import { injectProvider } from "./injectProvider.js";
+import { injectProvider } from './injectProvider.js'
 
 injectProvider()

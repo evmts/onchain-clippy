@@ -24,6 +24,7 @@
     "@types/chrome": "^0.0.260",
     "cross-env": "^7.0.3",
     "typescript": "^5.3.3",
-    "vite": "^4.5.5"
+    "vite": "^4.5.5",
+    "vite-plugin-node-polyfills": "^0.22.0"
   }
 }
