@@ -6,27 +6,27 @@ export const getManifest = ({ dev }: { dev?: boolean }) => ({
     version: pkg.version,
     manifest_version: 3,
     action: {
-        default_popup: "popup.html",
+        default_popup: "src/popup.html",
         default_icon: {
             '48': `icons/icon48.png`,
             '128': `icons/icon128.png`,
         },
     },
     background: {
-      service_worker: 'entries/background/interceptRequests.js'
+      service_worker: 'src/entries/background/interceptRequests.ts'
     },
     content_scripts: [
       {
         id: "inpage",
         matches: ['*://*/*'],
-        js: ['entries/content/index.js'],
+        js: ['src/entries/content/index.ts'],
         run_at: 'document_start',
         world: 'MAIN',
       },
       {
         id: "inpage2",
         matches: ['*://*/*'],
-        js: ['entries/content/listen.js'],
+        js: ['src/entries/content/listen.ts'],
         run_at: 'document_start'
       }
     ],

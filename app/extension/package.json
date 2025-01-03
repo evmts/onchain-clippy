@@ -10,23 +10,20 @@
   "type": "module",
   "scripts": {
     "all": "pnpm i && bun run build",
-    "build": "nx run-many --targets=build:dist,build:types",
-    "build:dist": "tsup",
-    "dev": "cross-env NODE_ENV=development bun run build",
-    "build:types": "tsup --dts-only",
-    "watch": "tsc --watch"
+    "build": "tsc && vite build",
+    "dev": "cross-env NODE_ENV=development bun run build"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@onchain-clippy/light-client": "workspace:^",
     "@tevm/tsconfig": "1.0.0-next.117",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.260",
     "cross-env": "^7.0.3",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^4.5.5"
   }
 }
