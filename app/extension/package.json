@@ -3,25 +3,28 @@
   "version": "1.0.0",
   "private": false,
   "sideEffects": false,
+  "extension": {
+    "name": "Onchain Clippy",
+    "description": "A simple dockerfile running an ethereum light client"
+  },
   "type": "module",
   "scripts": {
-    "all": "pnpm i",
-    "format": "biome format . --write",
-		"format:check": "biome format .",
-		"lint": "biome check . --write --unsafe",
-		"lint:check": "biome check . --verbose",
-    "build": "tsc && cp src/manifest.json src/popup.html src/icon48.png src/icon128.png dist/",
-    "watch": "tsc --watch"
+    "all": "pnpm i && bun run build",
+    "build": "tsc && vite build",
+    "dev": "cross-env NODE_ENV=development bun run build"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@onchain-clippy/light-client": "workspace:^",
-    "@tevm/tsconfig": "1.0.0-next.117"
+    "@tevm/tsconfig": "1.0.0-next.117",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.260",
-    "typescript": "^5.3.3"
+    "cross-env": "^7.0.3",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.5",
+    "vite-plugin-node-polyfills": "^0.22.0"
   }
 }
