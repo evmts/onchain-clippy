@@ -16,33 +16,15 @@ jobs:
     name: Nx CI Job
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      # Step 2: Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-      
-        # Step 3: Setup Bun
-      - name: Setup bun
-        uses: oven-sh/setup-bun@v2
-      
-      # Step 4: Install Biome
-      - name: Install Biome
-        run: bun install @biomejs/biome
-
-      # Step 5: Lint Check
+      # Step 1: Lint Check
       - name: Lint Check
         run: bun run lint:check
       
-      # Step 6: Format Check
+      # Step 2: Format Check
       - name: Format Check
         run: bun run format:check
 
-      # Step 7: Test
+      # Step 3: Test
       - name: Test
         run: bun run test
 
