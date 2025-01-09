@@ -2,6 +2,7 @@
 
 > "Looks like you're trying to buy a shitcoin! Would you like help staying safe?" - Your trusted AI assistant running in a Trusted Execution Environment (TEE)
 
+[![CI](https://github.com/hidd3n19/onchain-clippy/actions/workflows/bun.yml/badge.svg)](https://github.com/hidd3n19/onchain-clippy/actions/workflows/bun.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/FUCORY?style=social)](https://twitter.com/FUCORY)
 
