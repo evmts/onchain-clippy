@@ -15,3 +15,4 @@ runs:
     # Step 3: Install Biome
     - name: Install Biome
       run: bun install @biomejs/biome
+      shell: bash
