@@ -1,8 +1,7 @@
 name: Setup
-  runs:
+runs:
   using: composite
   steps:
-  
     # Step 1: Setup Node.js
     - name: Setup Node.js
       uses: actions/setup-node@v4
