@@ -16,21 +16,23 @@ jobs:
     name: Nx CI Job
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Step 2: Setup
       - name: "Setup"
         uses: ./.github/actions/setup
 
-      # Step 1: Lint Check
+      # Step 3: Lint Check
       - name: Lint Check
         run: bun run lint:check
       
-      # Step 2: Format Check
+      # Step 4: Format Check
       - name: Format Check
         run: bun run format:check
 
-      # Step 3: Test
+      # Step 5: Test
       - name: Test
         run: bun run test
 
