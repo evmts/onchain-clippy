@@ -1,0 +1,21 @@
+name: Setup
+  runs-on: ubuntu-latest
+  using: composite
+  steps:
+    # Step 1: Checkout the repository
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # Step 2: Setup Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: ".nvmrc"
+
+      # Step 3: Setup Bun
+    - name: Setup bun
+      uses: oven-sh/setup-bun@v2
+
+    # Step 4: Install Biome
+    - name: Install Biome
+      run: bun install @biomejs/biome
