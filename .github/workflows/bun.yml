@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+env:
+  # Increase memory for Node.js
+  NODE_OPTIONS: "--max_old_space_size=4096"
+
+jobs:
+  build:
+    name: Nx CI Job
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Step 2: Setup
+      - name: "Setup"
+        uses: ./.github/actions/setup
+
+      # Step 3: Lint Check
+      - name: Lint Check
+        run: bun run lint:check
+      
+      # Step 4: Format Check
+      - name: Format Check
+        run: bun run format:check
+
+      # Step 5: Test
+      - name: Test
+        run: bun run test
+
+  docker-build:
+      name: Docker Build Verification
+      runs-on: ubuntu-latest
+      steps:
+        # Step 1: Checkout the repository
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+        
+        # Step 2: Set up Docker Compose
+        - name: Set up Docker
+          uses: docker/setup-buildx-action@v3
+        
+        # Step 3: Docker Build Verification
+        - name: Docker Build Verification
+          run: docker build -f Dockerfile . --check
